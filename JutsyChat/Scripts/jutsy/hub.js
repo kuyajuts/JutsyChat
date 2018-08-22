@@ -5,9 +5,10 @@ var jutsyEstablished = false;
 jutsyChat.client.DisplayMessage = function (handler, message, background) {
     var encodedHandlerName = $('<div />').text(handler).html();
     var encodedMessage = $('<div />').text(message).html();
-    var encodedChatColor = $('<div />').text(backgroundColor).html();
+    var encodedChatColor = $('<div />').text(background).html();
 
-    $('.thread').prepend('<div class="bubble" style="background-color:"' + encodedChatColor + '"><p>'
+    $('.thread').prepend('<div class="col-12 chatbubble" style = "background-color:' + encodedChatColor + '">' +  
+        '<p>'
         + encodedHandlerName
         + '</strong>:&nbsp;&nbsp;' + encodedMessage + '</p></div>');
 }
@@ -25,7 +26,7 @@ function connectToHub(handler) {
                     $(".connectedUsers").append("<li>" + user.Handle + "</li>");
                 });
 
-                jutsyChat.server.Send(handler, " has joined Jutsy.", "#900000");
+                jutsyChat.server.send(handler, " has joined Jutsy.", "#eeeeee");
 
 
             });

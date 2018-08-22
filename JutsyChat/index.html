@@ -7,26 +7,36 @@
     <link rel="stylesheet" type="text/css" href="/Content/site.css" />
 </head>
 <body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-dark bg-dark">
-            <span class="navbar-brand mb-0 h1">Jutsy</span>
-        </nav>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Jutsy</a>
+            </div>
+        </div>
+    </nav>
 
+    <div class="container-fluid">
+        
         <div class="modal fade" id="usernameModal" tabindex="-1" role="dialog" aria-labelledby="usernameModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModal3Label">What is your name?</h5>
+                        <h5 class="modal-title" id="exampleModal3Label">Log in to Jutsy</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <input type="text" class="form-control" id="txtChatHandle" />
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Username" class="form-control" id="txtChatHandle" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Your Password" class="form-control" id="txtPassword" />
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" id="btnCancelChat" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" id="btnSetHandler" class="btn btn-primary">Join Jutsy Chat!</button>
+                        <button type="button" id="btnSetHandler" class="btn btn-success">Join Jutsy Chat!</button>
                     </div>
                 </div>
             </div>
@@ -36,9 +46,7 @@
             <div class="col-2 chatbox">
                 <p>Users online:</p>
 
-                <ul class="connectedUsers">
-
-                </ul>
+                <ul class="connectedUsers"></ul>
 
             </div>
             <div class="col-10 threadbox">
